@@ -1,0 +1,499 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C25C6DE8-29B6-4BD6-A8B3-F79C822191A0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KHJHCentralOffice</RootNamespace>
+    <AssemblyName>KHJHCentralOffice-ApproachSurvey</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiproSoftware.Shared.Net20, Version=1.0.93.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\ActiproSoftware.Shared.Net20.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ActiproSoftware.SyntaxEditor.Addons.Web.Net20, Version=4.0.262.0, Culture=neutral, PublicKeyToken=21a821480e210563, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\ActiproSoftware.SyntaxEditor.Addons.Web.Net20.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.262.0, Culture=neutral, PublicKeyToken=21a821480e210563, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\ActiproSoftware.SyntaxEditor.Net20.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ActiproSoftware.WinUICore.Net20, Version=1.0.93.0, Culture=neutral, PublicKeyToken=1eba893a2bc55de5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\ActiproSoftware.WinUICore.Net20.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Aspose.Cells, Version=4.3.0.0, Culture=neutral, PublicKeyToken=9a40d5a4b59e5256, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\Aspose.Cells.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Aspose.Words, Version=4.4.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\Aspose.Words.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DesktopLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\DesktopLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=9.5.0.1, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="FISCA, Version=2.5.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.Authentication, Version=1.9.0.20, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.Authentication.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.Core, Version=1.0.1.5, Culture=neutral, PublicKeyToken=a269f410f9e2a287, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.Data, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.DSAClient, Version=1.0.1.16, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.DSAClient.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.DSAUtil, Version=3.9.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.DSAUtil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.Permission, Version=1.2.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.Permission.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.Presentation, Version=1.1.0.19, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.Presentation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.Synchronization, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.Synchronization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.UDT, Version=1.0.2.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\FISCA.UDT.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accessor\ApproachExport.cs" />
+    <Compile Include="Accessor\ApproachReport.cs" />
+    <Compile Include="Accessor\ApproachReportTemplate.cs" />
+    <Compile Include="Accessor\CheckReportTemplate.cs" />
+    <Compile Include="AddNewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewForm.Designer.cs">
+      <DependentUpon>AddNewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Export\Approach_Export.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Export\Approach_Export.designer.cs">
+      <DependentUpon>Approach_Export.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Permissions.cs" />
+    <Compile Include="Report\Approach_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Approach_Report.designer.cs">
+      <DependentUpon>Approach_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionHelper.cs" />
+    <Compile Include="DefaultView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Items\GraduateSurveyApproach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Items\GraduateSurveyApproach.Designer.cs">
+      <DependentUpon>GraduateSurveyApproach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\GraduateSurveyVagrant.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Items\GraduateSurveyVagrant.Designer.cs">
+      <DependentUpon>GraduateSurveyVagrant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenTime.Designer.cs">
+      <DependentUpon>OpenTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyComparer.cs" />
+    <Compile Include="UDT\SchoolLog.cs" />
+    <Compile Include="UnApproach_Check.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnApproach_Check.designer.cs">
+      <DependentUpon>UnApproach_Check.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\UnApproach_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\UnApproach_Report.designer.cs">
+      <DependentUpon>UnApproach_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\ContractServices.cs" />
+    <Compile Include="SortableBindingList.cs" />
+    <Compile Include="UDMManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UDMManagerForm.Designer.cs">
+      <DependentUpon>UDMManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesktopModuleManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesktopModuleManagerForm.Designer.cs">
+      <DependentUpon>DesktopModuleManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetailItemDescription.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DetailItemDescription.Designer.cs">
+      <DependentUpon>DetailItemDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetailItems.cs" />
+    <Compile Include="ExportQueryData.cs" />
+    <Compile Include="Fields\FieldManager.cs" />
+    <Compile Include="Fields\TitleField.cs" />
+    <Compile Include="Fields\DSNSField.cs" />
+    <Compile Include="Fields\GroupField.cs" />
+    <Compile Include="ImportExport.cs" />
+    <Compile Include="Items\BasicInfoItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Items\BasicInfoItem.Designer.cs">
+      <DependentUpon>BasicInfoItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\GadgetOrderAdjustForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\GadgetOrderAdjustForm.Designer.cs">
+      <DependentUpon>GadgetOrderAdjustForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\ModuleItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Items\ModuleItem.Designer.cs">
+      <DependentUpon>ModuleItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\NetworkItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Items\NetworkItem.Designer.cs">
+      <DependentUpon>NetworkItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\StudentExchangeReset.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Items\StudentExchangeReset.Designer.cs">
+      <DependentUpon>StudentExchangeReset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\UDMItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Items\UDMItem.Designer.cs">
+      <DependentUpon>UDMItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\SimpleDefContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\SimpleDefContent.Designer.cs">
+      <DependentUpon>SimpleDefContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\UDSItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Items\UDSItem.Designer.cs">
+      <DependentUpon>UDSItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\UDTItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Items\UDTItem.Designer.cs">
+      <DependentUpon>UDTItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\UDTTableDefContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\UDTTableDefContent.Designer.cs">
+      <DependentUpon>UDTTableDefContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\WebGadgetItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Items\WebGadgetItem.Designer.cs">
+      <DependentUpon>WebGadgetItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RibbonButtons.cs" />
+    <Compile Include="UDT\ApproachStatistics.cs" />
+    <Compile Include="UDT\ApproachStatisticsCalculator.cs" />
+    <Compile Include="UDT\OpenTime.cs" />
+    <Compile Include="UDT\School.cs" />
+    <Compile Include="SearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchForm.designer.cs">
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SQLForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SQLForm.Designer.cs">
+      <DependentUpon>SQLForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UDT\VagrantStatistics.cs" />
+    <Compile Include="Utility.cs" />
+    <Compile Include="VAFinder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VAFinder.designer.cs">
+      <DependentUpon>VAFinder.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddNewForm.resx">
+      <DependentUpon>AddNewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Export\Approach_Export.resx">
+      <DependentUpon>Approach_Export.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Approach_Report.resx">
+      <DependentUpon>Approach_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DefaultView.resx">
+      <DependentUpon>DefaultView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesktopModuleManagerForm.resx">
+      <DependentUpon>DesktopModuleManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailItemDescription.resx">
+      <DependentUpon>DetailItemDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\BasicInfoItem.resx">
+      <DependentUpon>BasicInfoItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\GraduateSurveyApproach.resx">
+      <DependentUpon>GraduateSurveyApproach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\GraduateSurveyVagrant.resx">
+      <DependentUpon>GraduateSurveyVagrant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\GadgetOrderAdjustForm.resx">
+      <DependentUpon>GadgetOrderAdjustForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\ModuleItem.resx">
+      <DependentUpon>ModuleItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\NetworkItem.resx">
+      <DependentUpon>NetworkItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\StudentExchangeReset.resx">
+      <DependentUpon>StudentExchangeReset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\UDMItem.resx">
+      <DependentUpon>UDMItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\SimpleDefContent.resx">
+      <DependentUpon>SimpleDefContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\UDSItem.resx">
+      <DependentUpon>UDSItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\UDTItem.resx">
+      <DependentUpon>UDTItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\UDTTableDefContent.resx">
+      <DependentUpon>UDTTableDefContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\WebGadgetItem.resx">
+      <DependentUpon>WebGadgetItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenTime.resx">
+      <DependentUpon>OpenTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Aspose.Total.lic" />
+    <EmbeddedResource Include="UnApproach_Check.resx">
+      <DependentUpon>UnApproach_Check.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\UnApproach_Report.resx">
+      <DependentUpon>UnApproach_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchForm.resx">
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SQLForm.resx">
+      <DependentUpon>SQLForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UDMManagerForm.resx">
+      <DependentUpon>UDMManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VAFinder.resx">
+      <DependentUpon>VAFinder.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\103學年度國中畢業學生進路調查填報複核表.doc" />
+    <None Include="Resources\103學年度國中畢業學生進路調查填報表格.doc" />
+    <None Include="Resources\國中畢業未升學未就業學生動向.xls" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\102學年度國中畢業學生進路調查填報表格.doc" />
+    <None Include="Resources\102學年度國中畢業學生進路調查填報複核表.doc" />
+    <None Include="Resources\import.image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lamp_search_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\school_search_128.png" />
+    <None Include="Resources\paste_64.png" />
+    <None Include="Resources\school_events_config_128.png" />
+    <None Include="Resources\iOS Setting.png" />
+    <None Include="Resources\Export.Image.png" />
+    <None Include="Resources\atom_close_128.png" />
+    <None Include="Resources\atom_add_128.png" />
+    <Content Include="Library\ActiproSoftware.Shared.Net20.dll" />
+    <Content Include="Library\ActiproSoftware.Shared.Net20.xml" />
+    <Content Include="Library\ActiproSoftware.SyntaxEditor.Addons.Web.Net20.dll" />
+    <Content Include="Library\ActiproSoftware.SyntaxEditor.Addons.Web.Net20.xml" />
+    <Content Include="Library\ActiproSoftware.SyntaxEditor.Net20.dll" />
+    <Content Include="Library\ActiproSoftware.SyntaxEditor.Net20.xml" />
+    <Content Include="Library\ActiproSoftware.WinUICore.Net20.dll" />
+    <Content Include="Library\ActiproSoftware.WinUICore.Net20.xml" />
+    <Content Include="Library\Aspose.Cells.dll" />
+    <Content Include="Library\Aspose.Cells.xml" />
+    <Content Include="Library\Aspose.Words.dll" />
+    <Content Include="Library\Aspose.Words.xml" />
+    <Content Include="Library\DesktopLib.dll" />
+    <Content Include="Library\DesktopLib.pdb" />
+    <Content Include="Library\DevComponents.DotNetBar2.dll" />
+    <Content Include="Library\DevComponents.DotNetBar2.xml" />
+    <Content Include="Library\FISCA.Authentication.dll" />
+    <Content Include="Library\FISCA.Authentication.pdb" />
+    <Content Include="Library\FISCA.Authentication.xml" />
+    <Content Include="Library\FISCA.Core.dll" />
+    <Content Include="Library\FISCA.Core.pdb" />
+    <Content Include="Library\FISCA.Core.xml" />
+    <Content Include="Library\FISCA.Data.dll" />
+    <Content Include="Library\FISCA.Data.pdb" />
+    <Content Include="Library\FISCA.Data.xml" />
+    <Content Include="Library\FISCA.dll" />
+    <Content Include="Library\FISCA.DSAClient.dll" />
+    <Content Include="Library\FISCA.DSAClient.pdb" />
+    <Content Include="Library\FISCA.DSAClient.xml" />
+    <Content Include="Library\FISCA.DSAUtil.dll" />
+    <Content Include="Library\FISCA.DSAUtil.pdb" />
+    <Content Include="Library\FISCA.DSAUtil.xml" />
+    <Content Include="Library\FISCA.pdb" />
+    <Content Include="Library\FISCA.Permission.dll" />
+    <Content Include="Library\FISCA.Permission.pdb" />
+    <Content Include="Library\FISCA.Permission.xml" />
+    <Content Include="Library\FISCA.Presentation.dll" />
+    <Content Include="Library\FISCA.Presentation.pdb" />
+    <Content Include="Library\FISCA.Presentation.xml" />
+    <Content Include="Library\FISCA.Synchronization.dll" />
+    <Content Include="Library\FISCA.Synchronization.pdb" />
+    <Content Include="Library\FISCA.Synchronization.xml" />
+    <Content Include="Library\FISCA.UDT.dll" />
+    <Content Include="Library\FISCA.UDT.pdb" />
+    <Content Include="Library\FISCA.UDT.xml" />
+    <Content Include="Library\FISCA.xml" />
+    <Content Include="Resources\atom_down_128.png" />
+    <Content Include="Resources\atom_up_128.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
