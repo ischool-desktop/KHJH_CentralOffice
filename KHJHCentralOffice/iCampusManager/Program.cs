@@ -110,8 +110,8 @@ namespace KHJHCentralOffice
             Program.MainPanel.RibbonBarItems["畢業學生進路調查"]["報表"]["畢業學生進路複核表"].Click += (sender, e) => new Approach_Report("國中畢業學生進路調查填報複核表", Accessor.ApproachReportTemplate.ReportType.複核表).ShowDialog();
             Program.MainPanel.RibbonBarItems["畢業學生進路調查"]["報表"]["畢業學生進路複核表"].Enable = Permissions.畢業學生進路複核表權限;
 
-            //Program.MainPanel.RibbonBarItems["畢業學生進路調查"]["報表"]["畢業未升學未就業學生動向"].Click += (sender, e) => new UnApproach_Report("國中畢業未升學未就業學生動向", Properties.Resources.國中畢業未升學未就業學生動向).ShowDialog();
-            //Program.MainPanel.RibbonBarItems["畢業學生進路調查"]["報表"]["畢業未升學未就業學生動向"].Enable = Permissions.畢業未升學未就業學生動向權限;
+            Program.MainPanel.RibbonBarItems["畢業學生進路調查"]["報表"]["畢業未升學未就業學生動向"].Click += (sender, e) => new UnApproach_Report("國中畢業未升學未就業學生動向", Properties.Resources.國中畢業未升學未就業學生動向).ShowDialog();
+            Program.MainPanel.RibbonBarItems["畢業學生進路調查"]["報表"]["畢業未升學未就業學生動向"].Enable = Permissions.畢業未升學未就業學生動向權限;
 
             Program.MainPanel.RibbonBarItems["畢業學生進路調查"]["未上傳學校"].Size = RibbonBarButton.MenuButtonSize.Medium;
             Program.MainPanel.RibbonBarItems["畢業學生進路調查"]["未上傳學校"].Image = Properties.Resources.school_search_128;

@@ -104,19 +104,25 @@ namespace KHJHCentralOffice
                         {
                             book.Worksheets[0].Cells[RowIndex, 0].PutValue(SchoolName);
                             book.Worksheets[0].Cells[RowIndex, 1].PutValue(elmStudent.Element("姓名").Value);
-                            book.Worksheets[0].Cells[RowIndex, 2].PutValue(elmStudent.Element("座號").Value);
-                            book.Worksheets[0].Cells[RowIndex, 3].PutValue(elmStudent.Element("未升學未就業動向").Value);
-							book.Worksheets[0].Cells[RowIndex, 4].PutValue(string.IsNullOrWhiteSpace(elmStudent.Element("是否需要教育部協助").Value) ? "否" : elmStudent.Element("是否需要教育部協助").Value);
-                            book.Worksheets[0].Cells[RowIndex, 5].PutValue(elmStudent.Element("備註").Value);
-							book.Worksheets[0].Cells[RowIndex, 5].Style.IsTextWrapped = true;
+
+                            if (elmStudent.Element("班級") != null)
+                                book.Worksheets[0].Cells[RowIndex, 2].PutValue(elmStudent.Element("班級").Value);
+                            else
+                                book.Worksheets[0].Cells[RowIndex, 2].PutValue("");
+                            book.Worksheets[0].Cells[RowIndex, 3].PutValue(elmStudent.Element("座號").Value);
+                            book.Worksheets[0].Cells[RowIndex, 4].PutValue(elmStudent.Element("未升學未就業動向").Value);
+							book.Worksheets[0].Cells[RowIndex, 5].PutValue(string.IsNullOrWhiteSpace(elmStudent.Element("是否需要教育部協助").Value) ? "否" : elmStudent.Element("是否需要教育部協助").Value);
+                            book.Worksheets[0].Cells[RowIndex, 6].PutValue(elmStudent.Element("備註").Value);
+							book.Worksheets[0].Cells[RowIndex, 6].Style.IsTextWrapped = true;
 							book.Worksheets[0].Cells[RowIndex, 0].Style.ShrinkToFit = true;
-							book.Worksheets[0].Cells[RowIndex, 5].Style.HorizontalAlignment = TextAlignmentType.Left;
+							book.Worksheets[0].Cells[RowIndex, 6].Style.HorizontalAlignment = TextAlignmentType.Left;
 							this.DrawBorder(book.Worksheets[0].Cells[RowIndex, 0]);
 							this.DrawBorder(book.Worksheets[0].Cells[RowIndex, 1]);
 							this.DrawBorder(book.Worksheets[0].Cells[RowIndex, 2]);
 							this.DrawBorder(book.Worksheets[0].Cells[RowIndex, 3]);
 							this.DrawBorder(book.Worksheets[0].Cells[RowIndex, 4]);
 							this.DrawBorder(book.Worksheets[0].Cells[RowIndex, 5]);
+                            this.DrawBorder(book.Worksheets[0].Cells[RowIndex, 6]);
 							book.Worksheets[0].AutoFitRow(RowIndex);
 							book.Worksheets[0].Cells.SetRowHeight(RowIndex, book.Worksheets[0].Cells.GetRowHeight(RowIndex) * 10 / 7);
                             RowIndex++;
