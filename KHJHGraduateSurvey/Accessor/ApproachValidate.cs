@@ -105,6 +105,11 @@ namespace JH_KH_GraduateSurvey.Accessor
                         {
                             if (!int.TryParse(q1_string, out q1_int))
                                 Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「升學與就業情形」限填正整數。"));
+                            else
+                            {
+                                if (q1_int > 3 || q1_int < 1)
+                                    Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「升學與就業情形」僅可填 1~3。"));
+                            }
                         }
                         if (int.TryParse(q1_string, out q1_int))
                         {
@@ -171,6 +176,11 @@ namespace JH_KH_GraduateSurvey.Accessor
                         {
                             if (!int.TryParse(q2_string, out q2_int))
                                 Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「就讀學校」限填正整數。"));
+                            else
+                            {
+                                if (q2_int > 8 || q2_int < 1)
+                                    Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「就讀學校」僅可填 1~8。"));
+                            }
                         }
                         if (int.TryParse(q2_string, out q2_int))
                         {
@@ -228,6 +238,11 @@ namespace JH_KH_GraduateSurvey.Accessor
                         {
                             if (!int.TryParse(q4_string, out q4_int))
                                 Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「入學方式」限填正整數。"));
+                            else
+                            {
+                                if (q4_int > 18 || q4_int < 1)
+                                    Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「入學方式」僅可填 1~18。"));
+                            }
                         }
                         if (q4_string.Equals("16") || q4_string.Equals("17"))
                         {
@@ -303,6 +318,11 @@ namespace JH_KH_GraduateSurvey.Accessor
                         {
                             if (!int.TryParse(q3_string, out q3_int))
                                 Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「學制別」限填正整數。"));
+                            else
+                            {
+                                if (q3_int > 9 || q3_int < 1)
+                                    Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「就讀學校」僅可填 1~9。"));
+                            }
 
                             //	學制別為其他(9)，則就讀學校情形填6或7或8；入學方式填18
                             if (q3_string.Equals("9"))
@@ -355,6 +375,17 @@ namespace JH_KH_GraduateSurvey.Accessor
                         {
                             if (!int.TryParse(q5_string, out q5_int))
                                 Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「未升學未就業動向」限填正整數。"));
+                            else
+                            {
+                                if (q5_int > 6 || q5_int < 1)
+                                    Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「未升學未就業動向」僅可填 1~6。"));
+                            }
+                            if (!q1_string.Equals("3"))
+                            {
+                                Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「未升學未就業動向」有填寫時，「升學與就業情形」僅可填 3。"));
+                            }
+                            if (!string.IsNullOrEmpty(q2_string) || !string.IsNullOrEmpty(q3_string) || !string.IsNullOrEmpty(q4_string))
+                                Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「未升學未就業動向」有填寫時，「升學：就讀學校情形」、「升學：學制別」、「升學：入學方式」不可填寫。"));
                         }
                         if (int.TryParse(q5_string, out q5_int))
                         {
@@ -434,6 +465,11 @@ namespace JH_KH_GraduateSurvey.Accessor
                         {
                             if (!int.TryParse(q1_string, out q1_int))
                                 Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「升學與就業情形」限填正整數。"));
+                            else
+                            {
+                                if (q1_int > 3 || q1_int < 1)
+                                    Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「升學與就業情形」僅可填 1~3。"));
+                            }
                         }
                         if (int.TryParse(q1_string, out q1_int))
                         {
@@ -736,6 +772,17 @@ namespace JH_KH_GraduateSurvey.Accessor
                         {
                             if (!int.TryParse(q5_string, out q5_int))
                                 Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「未升學未就業動向」限填正整數。"));
+                            else
+                            {
+                                if (q5_int > 11 || q5_int < 1)
+                                    Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「未升學未就業動向」僅可填 1~11。"));
+                            }
+                            if (!q1_string.Equals("3"))
+                            {
+                                Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「未升學未就業動向」有填寫時，「升學與就業情形」僅可填 3。"));
+                            }
+                            if (!string.IsNullOrEmpty(q2_string) || !string.IsNullOrEmpty(q3_string) || !string.IsNullOrEmpty(q4_string))
+                                Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「未升學未就業動向」有填寫時，「升學：就讀學校情形」、「升學：學制別」、「升學：入學方式」不可填寫。"));
                         }
                         if (int.TryParse(q5_string, out q5_int))
                         {

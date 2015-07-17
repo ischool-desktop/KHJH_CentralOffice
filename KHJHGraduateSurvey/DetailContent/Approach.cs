@@ -170,6 +170,7 @@ namespace JH_KH_GraduateSurvey.DetailContent
             this.txtSurveyYear.Minimum = result.Descendants("school_year").Min(x => decimal.Parse(x.Value));
             this.txtSurveyYear.Maximum = result.Descendants("school_year").Max(x => decimal.Parse(x.Value));
             this.txtSurveyYear.Value = this.txtSurveyYear.Maximum;
+            this.CurrentSchoolYear = this.txtSurveyYear.Value;
         }
 
         private void dgvData_CurrentCellDirtyStateChanged(object sender, EventArgs e)
@@ -317,10 +318,10 @@ namespace JH_KH_GraduateSurvey.DetailContent
                 this.txtSurveyYear.Text = row["填報學年度"] + "";
                 this.txtMemo.Text = row["備註"] + "";
             }
-            
+
             foreach (DataColumn column in dataTable.Columns)
             {
-                if (column.ColumnName == "填報學年度" || column.ColumnName=="備註")
+                if (column.ColumnName == "填報學年度" || column.ColumnName == "備註")
                     continue;
 
                 List<object> source = new List<object>();
@@ -338,7 +339,7 @@ namespace JH_KH_GraduateSurvey.DetailContent
         protected override void OnCancelButtonClick(EventArgs e)
         {
             if (!_BGWLoadData.IsBusy)
-            {                
+            {
                 this.ClearError();
                 this._BGWLoadData.RunWorkerAsync();
             }
@@ -385,12 +386,12 @@ namespace JH_KH_GraduateSurvey.DetailContent
 
             Dictionary<int, List<MessageItem>> dicMessages = Accessor.ApproachValidate.Execute((int)this.CurrentSchoolYear, Data);
 
-            List<string> ErrorMessages = new List<string>(); 
+            List<string> ErrorMessages = new List<string>();
             foreach (int key in dicMessages.Keys)
             {
                 if (dicMessages[key].Count > 0)
                 {
-                    ErrorMessages.AddRange(dicMessages[key].Select(x=>x.Message));
+                    ErrorMessages.AddRange(dicMessages[key].Select(x => x.Message));
                 }
             }
             if (ErrorMessages.Count > 0)
@@ -415,7 +416,7 @@ namespace JH_KH_GraduateSurvey.DetailContent
                 return;
             }
 
-			UDT.Approach approach = new UDT.Approach();
+            UDT.Approach approach = new UDT.Approach();
 
             string string_Q1 = this.dgvData.Rows[0].Cells[1].Value + "";
             string string_Q2 = this.dgvData.Rows[1].Cells[1].Value + "";
@@ -428,31 +429,31 @@ namespace JH_KH_GraduateSurvey.DetailContent
 
             #region 儲存UDT資料
 
-			//approach.StudentID = int.Parse(this.PrimaryKey);
-			//approach.SurveyYear = int.Parse(this.txtSurveyYear.Text.Trim());
-			//approach.LastUpdateTime = DateTime.Now;
-   //         approach.Q6 = string_Q6;
-   //         approach.Memo = txtMemo.Text.Trim();
+            //approach.StudentID = int.Parse(this.PrimaryKey);
+            //approach.SurveyYear = int.Parse(this.txtSurveyYear.Text.Trim());
+            //approach.LastUpdateTime = DateTime.Now;
+            //         approach.Q6 = string_Q6;
+            //         approach.Memo = txtMemo.Text.Trim();
 
-   //         approach.Q1 = int.Parse(this.dgvData.Rows[0].Cells[1].Value + "");
-   //         if (int.TryParse(string_Q2, out int_QQ))
-   //             approach.Q2 = int_QQ;
-   //         else
-   //             approach.Q2 = null;
-   //         if (int.TryParse(string_Q3, out int_QQ))
-   //             approach.Q3 = int_QQ;
-   //         else
-   //             approach.Q3 = null;
-   //         if (int.TryParse(string_Q4, out int_QQ))
-   //             approach.Q4 = int_QQ;
-   //         else
-   //             approach.Q4 = null;
-   //         if (int.TryParse(string_Q5, out int_QQ))
-   //             approach.Q5 = int_QQ;
-   //         else
-   //             approach.Q5 = null;
+            //         approach.Q1 = int.Parse(this.dgvData.Rows[0].Cells[1].Value + "");
+            //         if (int.TryParse(string_Q2, out int_QQ))
+            //             approach.Q2 = int_QQ;
+            //         else
+            //             approach.Q2 = null;
+            //         if (int.TryParse(string_Q3, out int_QQ))
+            //             approach.Q3 = int_QQ;
+            //         else
+            //             approach.Q3 = null;
+            //         if (int.TryParse(string_Q4, out int_QQ))
+            //             approach.Q4 = int_QQ;
+            //         else
+            //             approach.Q4 = null;
+            //         if (int.TryParse(string_Q5, out int_QQ))
+            //             approach.Q5 = int_QQ;
+            //         else
+            //             approach.Q5 = null;
 
-            
+
             Dictionary<string, Dictionary<string, string>> Data = new Dictionary<string, Dictionary<string, string>>();
             Data.Add(PrimaryKey, new Dictionary<string, string>());
             Data[PrimaryKey].Add("升學與就業情形", string_Q1);

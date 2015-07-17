@@ -54,8 +54,7 @@ namespace JH_KH_GraduateSurvey
         {
             Import.frmApproach_Import frm = (new Import.frmApproach_Import());
             if (frm.ShowDialog() == DialogResult.OK)
-                (new Import.Approach_Import(frm.SchoolYear)).Execute();          
-
+                (new Import.Approach_Import(frm.SchoolYear)).Execute();
         };
         #endregion
             
