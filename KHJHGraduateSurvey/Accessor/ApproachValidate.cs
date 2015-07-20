@@ -548,8 +548,8 @@ namespace JH_KH_GraduateSurvey.Accessor
                             {
                                 if (int.TryParse(q3_string, out q3_int))
                                 {
-                                    if (q3_int != 3)
-                                        Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「就讀學校」填寫 1 時，學制別僅可填 3。"));
+                                    if (q3_int > 3 || q3_int < 2)
+                                        Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「就讀學校」填寫 1 時，學制別僅可填 2,3。"));
                                 }
                             }
 
