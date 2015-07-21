@@ -602,23 +602,23 @@ namespace JH_KH_GraduateSurvey.Accessor
                         }
                         if (int.TryParse(q4_string, out q4_int))
                         {
-                            // 入學方式填1，學制別填8，就讀學校填5。
+                            // 入學方式填1，學制別填1,2,3,7,8，就讀學校填1,2,3,4,5。
                             if (q4_int == 1)
                             {
                                 if (int.TryParse(q3_string, out q3_int))
                                 {
-                                    List<int> Contents = new List<int>() { 8 };
+                                    List<int> Contents = new List<int>() { 1,2,3,7,8 };
 
                                     if (!Contents.Contains(q3_int))
-                                        Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「入學方式」填寫 1 時，「學制別」僅可填 8。"));
+                                        Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「入學方式」填寫 1 時，「學制別」僅可填 1,2,3,7,8。"));
                                 }
 
                                 if (int.TryParse(q2_string, out q2_int))
                                 {
-                                    List<int> Contents = new List<int>() { 5 };
+                                    List<int> Contents = new List<int>() { 1,2,3,4,5 };
 
                                     if (!Contents.Contains(q2_int))
-                                        Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「入學方式」填寫 1 時，「就讀學校」僅可填 5。"));
+                                        Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「入學方式」填寫 1 時，「就讀學校」僅可填 1,2,3,4,5。"));
                                 }
                             }
                             // 入學方式填9，學制別僅可7。
@@ -737,7 +737,8 @@ namespace JH_KH_GraduateSurvey.Accessor
                                     Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「學制別」填寫 5 或 6 時，入學方式僅可填 22。"));
                                 }
                             }
-                            //	學制別為8五專，則入學方式填1；就讀學校情形填5
+                            
+                            //	學制別為8五專，則入學方式填1；就讀學校情形填5                                                        
                             if (q3_string.Equals("8"))
                             {
                                 if (!(q4_string.Equals("1")))
