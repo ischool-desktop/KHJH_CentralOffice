@@ -544,24 +544,24 @@ namespace JH_KH_GraduateSurvey.Accessor
                         }
                         if (int.TryParse(q2_string, out q2_int))
                         {
-                            if (q2_int == 1)
-                            {
-                                if (int.TryParse(q3_string, out q3_int))
-                                {
-                                    if (q3_int > 3 || q3_int < 2)
-                                        Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「就讀學校」填寫 1 時，學制別僅可填 2,3。"));
-                                }
-                            }
+                            //if (q2_int == 1)
+                            //{
+                            //    if (int.TryParse(q3_string, out q3_int))
+                            //    {
+                            //        if (q3_int > 3 || q3_int < 2)
+                            //            Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「就讀學校」填寫 1 時，學制別僅可填 2,3。"));
+                            //    }
+                            //}
 
-                            if (q2_int == 3 || q2_int == 4)
-                            {
-                                if (int.TryParse(q3_string, out q3_int))
-                                {
-                                    IEnumerable<int> Contents = new List<int>() { 1, 2, 4, 5, 6, 7 };
-                                    if (!Contents.Contains(q3_int))
-                                        Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「就讀學校」填寫 3 或 4 時，學制別僅可填 1 或 2 或 4 或 5 或 6 或 7。"));
-                                }
-                            }
+                            //if (q2_int == 3 || q2_int == 4)
+                            //{
+                            //    if (int.TryParse(q3_string, out q3_int))
+                            //    {
+                            //        IEnumerable<int> Contents = new List<int>() { 1, 2, 4, 5, 6, 7 };
+                            //        if (!Contents.Contains(q3_int))
+                            //            Messages[y].Add(new MessageItem(EMBA.Validator.ErrorType.Error, EMBA.Validator.ValidatorType.Row, "「就讀學校」填寫 3 或 4 時，學制別僅可填 1 或 2 或 4 或 5 或 6 或 7。"));
+                            //    }
+                            //}
 
                             if (q2_int == 5)
                             {
