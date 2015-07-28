@@ -539,7 +539,7 @@ namespace JH_KH_GraduateSurvey.Accessor
 
                         #region 入學方式
                         A4_sum = B4_sum + C4_sum + D4_sum + E4_sum + F4_sum + G4_sum + H4_sum + I4_sum + J4_sum +
-                                 K4_sum + L4_sum + M4_sum + N4_sum + O4_sum + P4_sum + Q4_sum + R4_sum + S4_sum;
+                                 K4_sum + L4_sum + M4_sum + N4_sum + O4_sum + P4_sum + Q4_sum + R4_sum + S4_sum+T4_sum+U4_sum+V4_sum+W4_sum+X4_sum+Y4_sum+Z4_sum;
 
                         mergeKeyValue.Add("A4", A4_sum);
 
