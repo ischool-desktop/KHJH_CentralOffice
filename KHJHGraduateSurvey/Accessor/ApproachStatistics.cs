@@ -465,19 +465,19 @@ namespace JH_KH_GraduateSurvey.Accessor
                                 R4_sum += 1;
                             if (record.Q4 == 18)
                                 S4_sum += 1;
-                            if (record.Q4 == 18)
+                            if (record.Q4 == 19)
                                 T4_sum += 1;
-                            if (record.Q4 == 18)
+                            if (record.Q4 == 20)
                                 U4_sum += 1;
-                            if (record.Q4 == 18)
+                            if (record.Q4 == 21)
                                 V4_sum += 1;
-                            if (record.Q4 == 18)
+                            if (record.Q4 == 22)
                                 W4_sum += 1;
-                            if (record.Q4 == 18)
+                            if (record.Q4 == 23)
                                 X4_sum += 1;
-                            if (record.Q4 == 18)
+                            if (record.Q4 == 24)
                                 Y4_sum += 1;
-                            if (record.Q4 == 18)
+                            if (record.Q4 == 25)
                                 Z4_sum += 1;
                             #endregion
 
